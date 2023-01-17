@@ -36,6 +36,20 @@ function readLine() {
 function kangaroo(x1, v1, x2, v2) {
 	// Write your code here
 
+	if (x2 > x1 && v2 > v1)
+		return "NO";
+
+	let firstKangarooPosition = x1;
+	let secondKangarooPosition = x2;
+
+	while (true) {
+		firstKangarooPosition += v1;
+		secondKangarooPosition += v2;
+
+		if (firstKangarooPosition == secondKangarooPosition)
+			return "YES";
+	}
+
 }
 
 function main() {
