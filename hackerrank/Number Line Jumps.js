@@ -48,6 +48,10 @@ function kangaroo(x1, v1, x2, v2) {
 
 		if (firstKangarooPosition == secondKangarooPosition)
 			return "YES";
+		else if (secondKangarooPosition > firstKangarooPosition && v2 > v1)
+			return "NO";
+		else if (secondKangarooPosition < firstKangarooPosition && v2 < v1)
+			return "NO";
 	}
 
 }
