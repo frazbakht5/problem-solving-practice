@@ -32,6 +32,29 @@ function readLine() {
 function breakingRecords(scores) {
 	// Write your code here
 
+	let minScore = scores[0];
+	let maxScore = scores[0];
+	let minCount = 0;
+	let maxCount = 0;
+
+	if (scores.length > 1) {
+		for (let i = 1; i < scores.length; i++) {
+			const score = scores[i];
+
+			if (score < minScore) {
+				minScore = score;
+				minCount++;
+			}
+			else if (score > maxScore) {
+				maxScore = score;
+				maxCount++;
+			}
+
+		}
+	}
+
+	return [maxCount, minCount];
+
 }
 
 function main() {
