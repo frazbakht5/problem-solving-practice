@@ -33,7 +33,75 @@ function readLine() {
 
 function getTotalX(a, b) {
 	// Write your code here
+	console.log("\n");
 
+	let maxOfA = -1;
+
+	for (let i = 0; i < a.length; i++) {
+		const num = a[i];
+		if (num > maxOfA)
+			maxOfA = num;
+	}
+	console.log("maxOfA ===> ", maxOfA);
+
+	let minOfB = Number.MAX_VALUE;
+
+	for (let i = 0; i < b.length; i++) {
+		const num = b[i];
+		if (num < minOfB)
+			minOfB = num;
+	}
+	console.log("minOfB ===> ", minOfB);
+
+	let count = 0;
+
+
+	for (let i = maxOfA; i <= minOfB; i++) {
+
+		let isNumMultipleOfA = true;
+		let isNumFactorOfB = true;
+
+		console.log("checking for i ===> ", i);
+
+		for (let j = 0; j < a.length; j++) {
+			const elementOfA = a[j];
+
+			if (i % elementOfA != 0) {
+				isNumMultipleOfA = false;
+				console.log("Not a multiple for elementOfA ===> ", elementOfA);
+				break;
+			}
+		}
+
+		if (isNumMultipleOfA == false)
+			continue;
+
+		if (i == 8)
+			console.log("A array test passed");
+
+		for (let j = 0; j < b.length; j++) {
+			const elementOfB = b[j];
+
+			if (elementOfB % i != 0) {
+				isNumFactorOfB = false;
+				console.log("Not a factor for elementOfB ===> ", elementOfB);
+
+				break;
+			}
+		}
+
+		if (isNumFactorOfB == false)
+			continue;
+
+		if (i == 8)
+			console.log("B array test passed");
+
+		count++;
+		console.log("count++. Now count ===> ", count);
+
+	}
+
+	return count;
 }
 
 function main() {
