@@ -26,8 +26,14 @@ var romanToInt = function (s) {
 
 		if (symbolValues[char] <= symbolValues[lastChar])
 			total += symbolValues[char];
-		else
-			total -= symbolValues[char];
+		else {
+			total -= symbolValues[lastChar];
+			let toAdd = symbolValues[char] - symbolValues[lastChar];
+			total += toAdd
+		}
+
+		lastChar = char;
+
 	}
 
 	return total;
