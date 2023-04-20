@@ -14,7 +14,7 @@ var longestCommonPrefix = function (strs) {
 	}
 
 	for (let i = 0; i < shortestWordLength; i++) {
-		let currentChar = strs[j][i];
+		let currentChar = strs[0][i];
 		let toAdd = true;
 
 		for (let j = 0; j < strs.length; j++) {
@@ -34,6 +34,8 @@ var longestCommonPrefix = function (strs) {
 			break;
 
 	}
+
+	return prefix
 
 };
 
